@@ -50,3 +50,7 @@ latex.out/
 # algorithms
 *.alg
 *.loa
+
+## VSCODE
+.history
+*.\_wordcount\_selection.tex

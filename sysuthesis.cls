@@ -260,15 +260,16 @@
 \newcommand\cabstract[1]{\def\@cabstract{#1}}
 \newcommand\eabstract[1]{\def\@eabstract{#1}}
 
-% 中文摘要标题：三号黑体
-% 中文摘要、关键字标题：小四号黑体
-% 中文摘要、关键字内容：小四号宋体
-
+% 中文摘要大标题：只写内容，小二黑体，居中
+% 专业、硕士、指导教师：左边对齐
+% 中文摘要小标题(摘要)：小四宋体，加粗
+% 中文摘要内容：小四宋体
+% 中文关键词：小四宋体
 \newcommand\makecabstract{
 	\begin{center}
-		\zihao{3}
+		\zihao{-2}
 		\mbox{ }\\
-		\heiti{论文题目：\@ctitle} 
+		\heiti{\@ctitle} 
 		\vspace{\baselineskip}\\
 		\zihao{4}\songti
 		\begin{tabular}{l}
@@ -278,8 +279,8 @@
 		\end{tabular}
 		\vspace{\baselineskip}\\
         \phantomsection
-		{\zihao{3}\heiti{摘\hspace{2em}要}}
 	\end{center}		
+		{\zihao{-4}\heiti{摘要}}
 		\begin{spacing}{1.5}
 			\zihao{-4} \songti\@cabstract
 		\end{spacing}
@@ -287,24 +288,27 @@
 	\zihao{-4}\textbf{关键词：}\@ckeywords
 }
 
-% 英文摘要、关键字标题：小四号新罗马体(Time New Roman)加粗并加方括号
-% 英文摘要、关键字内容：小四号新罗马体(Time New Roman)
+% 英文摘要标题：只写内容，小二黑体，居中
+% Major/Name/Supervisor：左对齐，四号新罗马体(Time New Roman)
+% ABSTRACT: 大写，小四号新罗马体(Time New Roman)，左对齐
+% 英文摘要内容：小四号新罗马体(Time New Roman)
+% 英文关键词：小四号新罗马体(Time New Roman)
 \newcommand\makeeabstract{
 	\begin{center}
-		\zihao{3}
+		\zihao{-2}
 		\mbox{ }\\
-		\textbf{Title: \@etitle} 
+		\textbf{\@etitle} 
 		\vspace{\baselineskip}\\
 		\zihao{4}
 		\begin{tabular}{ll}
-			Major: \@emajor \\
-			Name: \@eauthor \\
-			Supervisor: \@ementor
+			Major: &\@emajor \\
+			Name: &\@eauthor \\
+			Supervisor: &\@ementor
 		\end{tabular}
 		\vspace{\baselineskip}\\
         \phantomsection
-		{\zihao{3}\textbf{ABSTRACT}}
 	\end{center}
+		{\zihao{-4}\textbf{ABSTRACT}}
 		\begin{spacing}{1.5}
 			\zihao{-4} \@eabstract
 		\end{spacing}
