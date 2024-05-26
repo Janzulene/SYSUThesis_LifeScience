@@ -184,54 +184,67 @@
 \newcommand\emajor[1]{\def\@emajor{#1}}
 \newcommand\cmentor[1]{\def\@cmentor{#1}}
 \newcommand\ementor[1]{\def\@ementor{#1}}
+\newcommand{\finishyear}[1]{\def\@finishyear{#1}}
+\newcommand{\finishmonth}[1]{\def\@finishmonth{#1}}
+\newcommand{\finishday}[1]{\def\@finishday{#1}}
+\newcommand{\degree}[1]{\def\@degree{#1}}
 
 \newlength{\@title@width}
 
 \renewcommand\maketitle {
     \begin{titlepage}
         \begin{center}
-            \includegraphics[width=11cm]{image/SYSULogo} \\
+            \zihao{4}{中山大学\@degree 学位论文}
             \vspace{\baselineskip}
-            \zihao{1}{中山大学硕士学位论文} \\
-            \vspace{1\baselineskip}
 
             % 参考：https://tex.stackexchange.com/a/324204/268488，https://tex.stackexchange.com/a/67582/268488
-            {\fontsize{12}{10}\selectfont
+            {
+            % \fontsize{12}{10}\selectfont
             \begin{tabularx}{\textwidth}{>{\centering\arraybackslash\hyphenpenalty=10000\exhyphenpenalty=10000}X}
-                \zihao{3}\heiti\@ctitle\\\vspace{1pt}\\
-                \zihao{3}\@etitle\\\vspace{20pt}\\
+                % \linespread{1.5}
+                % \selectfont
+                \zihao{1}\heiti\@ctitle\\\vspace{1pt}\\
+                \linespread{1.0}
+                \selectfont
+                \zihao{1}\@etitle\\
             \end{tabularx}
-
-        	\begin{tabular}{ll}
-        		{\makebox[3cm][s]{\zihao{4}\heiti{专 \hfill 业 \hfill 名 \hfill 称：}}} & \zihao{4}\@cmajor \\ [-1ex] \\
-        		{\makebox[3cm][s]{\zihao{4}\heiti{学 \hfill 位 \hfill 申 \hfill 请 \hfill 人：}}}& \zihao{4}\@cauthor \\ [-1ex] \\
-        		{\makebox[3cm][s]{\zihao{4}\heiti{指 \hfill 导 \hfill 教 \hfill 师：}}} & \zihao{4}\@cmentor \\ 
-            \end{tabular}
-            }
 			\vspace{\baselineskip}
-			
-  	    \zihao{4}{
-  	    	\begin{tabular}{rr}
-  	    		论文答辩委员会主席：& \raisebox{-1ex}{\underline{\makebox[6cm][c]{}}}\\
-  	    		&~\\
-  	    		成员：& \raisebox{-1ex}{\underline{\makebox[6cm][c]{}}}\\
-  	    		&~\\
-  	    		{}& \raisebox{-1ex}{\underline{\makebox[6cm][c]{}}}\\
-  	    		&~\\
-  	    		{}& \raisebox{-1ex}{\underline{\makebox[6cm][c]{}}}\\
-  	    		&~\\
-  	    		{}& \raisebox{-1ex}{\underline{\makebox[6cm][c]{}}}
-  	    	\end{tabular}
-  	    }
-            \vfill
-
-            \zihao{-5}
-            {\centering
-            {二〇二二年五月}
-			% 使用全中文日期，封面会更正式
             }
-
         \end{center}
+
+        {
+            \setlength{\parindent}{4cm}
+            \linespread{1.5}
+
+        	\begin{tabular}{l}
+        		{\makebox[3cm][s]{\zihao{3}{专 \hfill 业 \hfill 名 \hfill 称：}}} \zihao{3}\@cmajor \\ [-1ex] \\
+        		{\makebox[3cm][s]{\zihao{3}{申 \hfill 请 \hfill 人：}}} \zihao{3}\@cauthor \\ [-1ex] \\
+        		{\makebox[3cm][s]{\zihao{3}{指 \hfill 导 \hfill 教 \hfill 师：}}} \zihao{3}\@cmentor \\ 
+            \end{tabular}
+
+			\vspace{3\baselineskip}
+            
+            \begin{tabular}{l}
+                \zihao{3}{答辩委员会（签名）}\\ [-1ex] \\
+                \zihao{3}{主席：}\\ [-1ex] \\
+                \zihao{3}{成员：}\\
+            \end{tabular}
+            
+        }
+
+        \vfill
+
+        {
+        \linespread{1.5}
+        \begin{center}
+            \zihao{-3}{广州\ \ 中山大学\ \ 生命科学学院}
+
+            \zihao{-3}{\@finishyear 年\@finishmonth 月\@finishday 日}
+        \end{center}
+
+        \vspace{3\baselineskip}
+        }
+
     \end{titlepage}
     \clearpage
 }
