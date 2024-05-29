@@ -3,7 +3,7 @@
 本模板基于现有的[中山大学研究生学位论文模板](https://github.com/1FCENdoge/SYSUThesis)(感谢[@1FCENdoge](https://github.com/1FCENdoge)!)，在其基础上做了一点点微调，以更符合生科院的要求。
 与这一模板相比，本模板的主要调整详见[针对生科院要求的主要微调内容](#针对生科院要求的主要微调内容)和[其他添加的内容和功能](#其他添加的内容和功能)。
 本人已经使用该模板完成硕士学位论文，并通过学院的格式检查。
-如果存在其他问题也欢迎提 issue。
+如果存在任何问题，欢迎提出 issue。
 
 
 ## 如何使用
@@ -54,7 +54,9 @@ make clean      # 删除编译过程中生成的临时文件
 
 其具体效果如下：
 
+<p align="center">
 <img src="tutorial/figures/bicaption_example.png" alt="drawing" width="500"/>
+</p>
 
 如果对这一实现不够满意，也可以参考 bicaption 的[宏包文档](https://ftp.yz.yamagata-u.ac.jp/pub/CTAN/macros/latex/contrib/caption/bicaption.pdf)进行自定义。
 
@@ -96,7 +98,9 @@ sed -i "s/\\\emph{/{/g" reference.bib
 
 其绘制效果如下图所示:
 
+<p align="center">
 <img src="tutorial/figures/pcr_example.png" alt="drawing" width="500"/>
+</p>
 
 ### CSV 自动转换三线表
 
