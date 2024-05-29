@@ -7,7 +7,7 @@
 \begin{table}[h] 
 	\renewcommand\arraystretch{1.5}
 	\centering
-		\caption{典型的实验对比表格}	
+		\bicaption{典型的实验对比表格}{Typical experimental comparison table}
 		\begin{tabular}{*{4}{c}}
 			\toprule
 	 		Method & Pixel Acc. & Mean Acc. & Mean Iu.\\
@@ -27,7 +27,7 @@
 \begin{table}[h]
 	\renewcommand\arraystretch{1.5}
 	\centering
-	\caption{较为复杂的表格（涉及单元格的合并与拆分）}
+	\bicaption{较为复杂的表格（涉及单元格的合并与拆分）}{Relatively complex tables (involving merging and splitting of cells)}
 	\begin{tabular}{*{5}{c}}
 		\toprule
 		区域 & \tabincell{c}{外侧核热功率\\（MW）} & \tabincell{c}{内侧核热功率\\（MW）} & 结构 & \tabincell{c}{结构核热功率\\（MW）} \\
@@ -52,11 +52,35 @@
 \begin{figure}[h] 
 	\centering
 	\includegraphics[width=0.45\textwidth]{image/confusion.pdf}
-	\caption{图片插入示例}
+	% \bicaption{图片插入示例}{Example of inserting figures}
+	\bicaptionX{图片插入示例}{Example of inserting figures}
 	\label{fig:confusion}
 \end{figure}
 
 关于图片的并排，推荐使用较新的 subcaption 宏包，不建议使用 subfigure 或 subfig 等宏包，但对于多张图片还是不宜使用\LaTeX 直接插入，应将所需插入的图片先用PowerPoint排列、拼接，再标号，生成一张图片，再整个插入论文中。
+
+有些时候图片会有比较复杂的信息需要进一步解释(例如图片中包括不同的子图，或者图片中不同元素的具体含义)。
+而这些详细的图/表注释信息不需要出现在文档开始的图表目录中。
+这里本模板提供了\verb|\bicaptionX|命令用于自动排版注释内容，效果如图\ref{fig:sponge}。为了和注释区分，这一命令会自动在正文中对标题进行加粗。
+
+\begin{figure}[h] 
+	\centering
+	\includegraphics[width=0.8\textwidth]{image/sponge-celltype.jpg}
+	% \bicaption{图片插入示例}{Example of inserting figures}
+	\bicaptionX{复杂图片注释示例}{Example of complex image annotation}{（\textbf{A}）动物祖先系统发育树。（\textbf{B}）\textit{S.lacustris}鸟瞰图。（\textbf{C}）10106 个细胞组成的 TSNE 图，颜色表示42个不同聚类。（\textbf{D}）PAGA 连接图，边的粗细代表连接强度，节点尺寸代表细胞数量。（\textbf{E}） PAGA 路径的差异表达标记的归一化表达值。}
+	\label{fig:sponge}
+\end{figure}
+
+其基本使用方法为：
+
+\begin{verbatim}
+	没有注释：
+	\bicaptionX{中文标题}{English Title}
+	有注释：
+	\bicaptionX{中文标题}{English Title}{注释}	
+\end{verbatim}
+
+如果对这一实现不够满意，也可以自行查阅 bicaption 宏包的\href{https://sg.mirrors.cicku.me/ctan/macros/latex/contrib/caption/bicaption.pdf}{文档}。
 
 \section{算法环境}
 \label{sec:algorithm}

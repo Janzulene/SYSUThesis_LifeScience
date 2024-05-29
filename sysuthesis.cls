@@ -25,6 +25,7 @@
 \RequirePackage{calc}
 \RequirePackage{graphicx}
 \RequirePackage[labelsep=space, justification=centering]{caption}
+\RequirePackage[list=off]{bicaption} % 双语图表标题，但是目录只列举中文标题
 \RequirePackage{float}
 \RequirePackage[font=footnotesize]{subcaption}
 \RequirePackage{amsmath,amssymb,amsthm}
@@ -58,6 +59,8 @@
 \RequirePackage[linesnumbered,algochapter,ruled,vlined]{algorithm2e}
 \renewcommand{\algorithmcfname}{算法}
 \SetAlgoCaptionSeparator{\unskip\hspace*{\ccwd}}
+% 方便自定义函数
+\RequirePackage{xparse}
 
 \RequirePackage{tabularx} % for 'tabularx' env. and 'X' col. type
 \RequirePackage{ragged2e} % 实现两端对齐
@@ -106,6 +109,19 @@
 \renewcommand{\thetable}{\arabic{chapter}-\arabic{table}}
 \setlength\heavyrulewidth{1.5pt}
 \captionsetup{font=small,format=hang}
+\captionsetup[figure][bi-second]{name=Figure}
+\captionsetup[table][bi-second]{name=Table}
+% \newcommand{\bicaptionX}[2]{
+%     \bicaption[#1]{\textbf{#1}}{\textbf{#2}}
+% }
+\NewDocumentCommand{\bicaptionX}{mmg}{
+    \IfNoValueTF{#3}
+    {\bicaption[#1]{\textbf{#1}}{\textbf{#2}}}
+    {
+        \bicaption[#1]{\textbf{#1}}{\textbf{#2}\\\hspace{\textwidth}}
+        #3
+    } 
+}
 % 公式标题设定
 \renewcommand{\theequation}{\arabic{chapter}-\arabic{equation}}
 
