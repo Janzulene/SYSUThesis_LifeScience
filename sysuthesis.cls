@@ -114,7 +114,7 @@
 % \newcommand{\bicaptionX}[2]{
 %     \bicaption[#1]{\textbf{#1}}{\textbf{#2}}
 % }
-\NewDocumentCommand{\bicaptionX}{mmg}{
+\NewDocumentCommand{\bicaptionX}{mmg}{%
     \IfNoValueTF{#3}
     {\bicaption[#1]{\textbf{#1}}{\textbf{#2}}}
     {
@@ -567,3 +567,28 @@
   \fi
 }
 \renewcommand{\thefootnote}{\sysu@textcircled{footnote}}
+
+% PCR 条件绘制
+\newcommand\drawPCR[2][0.4]{%
+    \begin{tikzpicture}[font=\sffamily\small]
+    \begin{scope}[thick]
+        \foreach \X/\Y/\W [count=\Z] in {#2}
+        {
+            \ifnum\Z=1
+                \draw 
+                (0,0) -- ++({0.5*\X*1pt},{#1*\X*1pt}) -- ++ (1cm,0) coordinate (last) node[midway,above]{\X}
+                node[midway,below]{\Y};
+                \xdef\Xlast{\X}
+            \else
+                \pgfmathsetmacro{\DeltaX}{\X-\Xlast}
+                \ifnum\W=1
+                    \draw[dotted] ([xshift={0.25*abs(\DeltaX)*1pt}]last|- 0,0) --++(0, #1*125pt);
+                \fi
+                \draw (last) -- ++({0.5*abs(\DeltaX)*1pt},{#1*\DeltaX*1pt})  -- ++ (1cm,0) coordinate (last)
+                node[midway,above]{\X} node[midway,below]{\Y};
+                \xdef\Xlast{\X}
+            \fi
+        }
+    \end{scope}
+    \end{tikzpicture}
+}
