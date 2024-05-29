@@ -13,6 +13,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - 添加 PCR 热力学曲线绘制函数
 - 双语图注：添加双语图注命令 bicaptionX
 - 双语图注：在正文中将所有图表改成双语图注，并添加复杂图注的案例
+- 更新 reference.bib，添加文献
+- 修改 Makefile，添加对物种名称的处理代码
 
 ### Changed
 

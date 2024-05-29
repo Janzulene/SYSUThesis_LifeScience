@@ -1,6 +1,7 @@
 src = main
 
 pdf: clean main.tex reference.bib
+	sed -i "s/\\\emph{/{/g" reference.bib
 	xelatex $(src)
 	bibtex $(src)
 	xelatex $(src)
