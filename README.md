@@ -55,7 +55,7 @@ make clean      # 删除编译过程中生成的临时文件
 其具体效果如下：
 
 <p align="center">
-<img src="tutorial/figures/bicaption_example.png" alt="drawing" width="500"/>
+<img src="tutorial/figures/bicaption_example.png" alt="drawing" width="750"/>
 </p>
 
 如果对这一实现不够满意，也可以参考 bicaption 的[宏包文档](https://ftp.yz.yamagata-u.ac.jp/pub/CTAN/macros/latex/contrib/caption/bicaption.pdf)进行自定义。
@@ -117,7 +117,7 @@ sed -i "s/\\\emph{/{/g" reference.bib
 
 ## 相关规范
 - [中山大学研究生学位论文格式要求](http://graduate.sysu.edu.cn/rules)
-- [生命而科学学院关于研究生论文格式的补充说明(2016年4月修订)](https://lifesciences.sysu.edu.cn/graduate/degree/415)
+- [生命科学学院关于研究生论文格式的补充说明(2016年4月修订)](https://lifesciences.sysu.edu.cn/graduate/degree/415)
 
 ## 项目代码参考
 1. [中山大学LaTeX论文项目模板](https://github.com/SYSU-SCC/sysu-thesis)
