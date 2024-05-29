@@ -35,6 +35,8 @@
 \RequirePackage{CJK,CJKnumb}
 \RequirePackage{listings}
 \RequirePackage{longtable}
+\RequirePackage{csvsimple-l3} % 从 CSV 中自动导入表格
+\RequirePackage{adjustbox}
 \RequirePackage[section]{placeins}
 \RequirePackage{enumitem}
 \RequirePackage{bbm}

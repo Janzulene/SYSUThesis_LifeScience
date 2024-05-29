@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - 双语图注：在正文中将所有图表改成双语图注，并添加复杂图注的案例
 - 更新 reference.bib，添加文献
 - 修改 Makefile，添加对物种名称的处理代码
+- 添加 csvsimple，自动插入三线表
 
 ### Changed
 
