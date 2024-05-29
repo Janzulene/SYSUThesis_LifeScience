@@ -26,6 +26,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - 摘要页面修改: 修改中文职称间隔为空格，和英文更和谐
 - 扉页修改: 修改扉页以符合标准，添加对应的变量以控制封面输出
 - 符号说明放到附录
+- 修改模板标题为微调版本
 
 ### Removed
 
